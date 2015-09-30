@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #f8f9f9;
+}
+#root {
+  width: 1128px;
+  margin: 0 auto;
+}
+.editor {
+  width: 25%;
+  float: left;
+}
+.stage-document {
+  float: right;
+  width: 8.5in;
+  height: auto;
+  padding: 0.75in;
+  border: 1px solid #ccc;
+  background-color: white;
+  box-shadow: 2px 3px 5px #ccc;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Futura, sans-serif;
+  color: #114967;
+  text-transform: uppercase;
+  left: 2px;
+  letter-spacing: 4px;
+  font-size: 17pt;
+}
+p {
+  line-height: 22px;
+  text-align: justify;
+}
+p,
+ul,
+li,
+ol {
+  font-family: "Proxima Nova", sans-serif;
+}
+p strong,
+ul strong,
+li strong,
+ol strong {
+  font-weight: 900;
+}
