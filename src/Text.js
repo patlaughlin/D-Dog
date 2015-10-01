@@ -18,7 +18,7 @@ export default class Text extends Component {
     this.handleInput = this.handleInput.bind(this);
     this.state       = {
       value: {
-        __html: 'Foo'
+        __html: ''
       }
     };
   }
@@ -36,8 +36,6 @@ export default class Text extends Component {
     let value = this.state.value;
     return (
       <div>
-        <h2>Write Markdown!</h2>
-
         <div className="editor">
           <div className="mdl-textfield mdl-js-textfield">
             <textarea className="mdl-textfield__input" type="text" rows="10" onInput={this.handleInput}></textarea>
