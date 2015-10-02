@@ -57,7 +57,10 @@
     "grunt-webpack": "^1.0.11",
     "marked": "^0.3.5",
     "react": "^0.13.0",
+    "react-redux": "^3.0.1",
     "react-remarkable": "^1.1.1",
+    "redux": "^3.0.2",
+    "redux-devtools": "^2.1.5",
     "style-loader": "^0.12.4",
     "webpack-dev-server": "^1.12.0"
   }
