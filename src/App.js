@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NICE, SUPER_NICE } from './colors';
-import Text from './Text';
+import Editor from './Editor';
+import Document from './Document';
 
 class Counter extends Component {
   constructor(props) {
@@ -32,7 +33,8 @@ export class App extends Component {
   render() {
     return (
       <div>
-        <Text />
+        <Editor />
+        <Document value="" />
       </div>
     );
   }

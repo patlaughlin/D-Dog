@@ -1,3 +1,5 @@
+'use strict';
+
 import React, { Component } from 'react';
 import marked from 'marked';
 
@@ -39,10 +41,9 @@ export default class Text extends Component {
         <div className="editor">
           <div className="mdl-textfield mdl-js-textfield">
             <textarea className="mdl-textfield__input" type="text" rows="10" onInput={this.handleInput}></textarea>
-            <label className="mdl-textfield__label">Text lines...</label>
+            <label className="mdl-textfield__label">Markdown...</label>
           </div>
         </div>
-        <div className="stage-document" dangerouslySetInnerHTML={value}/>
       </div>
     )
   }
