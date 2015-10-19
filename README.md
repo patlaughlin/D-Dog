@@ -14,6 +14,3 @@ In another terminal
 
 The webpack devServer.js will be running on localhost:3000. Currently testing out react-transform (https://github.com/gaearon/react-transform-boilerplate) 
 for hot reloading React components. 
-
-- [ ] Get grunt and webpack running in a single task
-- [ ] Start doing things the "right way" component-wise now that the PoC is out of the way.
