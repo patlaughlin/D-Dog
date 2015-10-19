@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
-import { SET_CONTENT } from '../actions';
+import { SET_CONTENT } from '../constants/ActionTypes';
 
-function content(state = { __html: "" }, action) {
-  switch(action.type) {
+function content(state = {__html: ""}, action) {
+  switch (action.type) {
     case SET_CONTENT:
-      console.log('content');
-      return [...state, {
+      console.log(state);
+      return {
         content: action.content
-      }];
+      };
     default:
       return state;
   }

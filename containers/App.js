@@ -11,11 +11,11 @@ export class App extends Component {
     return (
       <div>
         <Editor
-          handleInput={text =>
+          onInput={text =>
             dispatch(setContent(text))
           }/>
         <Document
-          content={content}/>
+          text={content}/>
       </div>
     );
   }
