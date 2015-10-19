@@ -6,7 +6,6 @@ import Document from './../components/Document';
 
 export class App extends Component {
   render() {
-    console.log(this.props);
     const { dispatch, content } = this.props;
     return (
       <div>

@@ -23,7 +23,7 @@ export default class Editor extends Component {
   handleInput(e) {
     let rawMarkup = marked(e.target.value);
     this.props.onInput({
-        __html: rawMarkup
+      __html: rawMarkup
     });
   }
 
