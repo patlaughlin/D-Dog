@@ -14,28 +14,20 @@ marked.setOptions({
   smartypants: false
 });
 
-export default class Text extends Component {
+export default class Editor extends Component {
   constructor(props) {
     super(props);
     this.handleInput = this.handleInput.bind(this);
-    this.state       = {
-      value: {
-        __html: ''
-      }
-    };
   }
 
   handleInput(e) {
     let rawMarkup = marked(e.target.value);
-    this.setState({
-      value: {
+    this.props.handleInput({
         __html: rawMarkup
-      }
     });
   }
 
   render() {
-    let value = this.state.value;
     return (
       <div>
         <div className="editor">
