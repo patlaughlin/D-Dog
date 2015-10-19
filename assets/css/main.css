@@ -1,3 +1,8 @@
+.page-sizing {
+  width: 8.5in;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+}
 * {
   box-sizing: border-box;
 }
@@ -6,28 +11,35 @@ body {
   padding-top: 50px;
 }
 #root {
-  width: 1128px;
+  max-width: 1128px;
   margin: 0 auto;
 }
 .editor {
-  width: 25%;
-  float: left;
+  width: 8.5in;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  background: white;
+  padding: 25px;
+  display: block;
+}
+.editor .mdl-textfield {
+  width: 100%;
 }
 .stage-document {
-  float: right;
   width: 8.5in;
+  margin: 0 auto;
+  border: 1px solid #ccc;
   height: 11in;
   padding: 0.75in;
-  border: 1px solid #ccc;
   background-color: white;
   box-shadow: 2px 3px 5px #ccc;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.stage-document h1,
+.stage-document h2,
+.stage-document h3,
+.stage-document h4,
+.stage-document h5,
+.stage-document h6 {
   font-family: Futura, sans-serif;
   color: #114967;
   text-transform: uppercase;
@@ -35,19 +47,19 @@ h6 {
   letter-spacing: 4px;
   font-size: 17pt;
 }
-p {
+.stage-document p {
   line-height: 22px;
   text-align: justify;
 }
-p,
-ul,
-li,
-ol {
+.stage-document p,
+.stage-document ul,
+.stage-document li,
+.stage-document ol {
   font-family: "Proxima Nova", sans-serif;
 }
-p strong,
-ul strong,
-li strong,
-ol strong {
+.stage-document p strong,
+.stage-document ul strong,
+.stage-document li strong,
+.stage-document ol strong {
   font-weight: 900;
 }

@@ -8,7 +8,7 @@ module.exports = function (grunt) {
   grunt.initConfig({
     watch: {
       // if any .less file changes in directory "public/css/" run the "less"-task.
-      files: "./src/less/*.less",
+      files: "./assets/less/*.less",
       tasks: ["less"]
     },
     server: {
@@ -21,11 +21,10 @@ module.exports = function (grunt) {
         options: {
           // Specifies directories to scan for @import directives when parsing.
           // Default value is the directory of the source, which is probably what you want.
-          paths: ["./src/css/"]
+          paths: ["./assets/css/"]
         },
         files: {
-          // compilation.css  :  source.less
-          "./src/css/main.css": "./src/less/main.less"
+          "./assets/css/main.css": "./assets/less/main.less"
         }
       }
     }

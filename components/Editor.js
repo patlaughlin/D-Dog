@@ -1,6 +1,6 @@
 'use strict';
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import marked from 'marked';
 
 marked.setOptions({
@@ -28,8 +28,9 @@ export default class Editor extends Component {
   }
 
   render() {
+    let isVisible = this.props.isVisible;
     return (
-      <div>
+      <div style={{display: isVisible ? "block" : "none"}}>
         <div className="editor">
           <div className="mdl-textfield mdl-js-textfield">
             <textarea className="mdl-textfield__input" type="text" rows="10" onInput={this.handleInput}></textarea>
@@ -40,3 +41,8 @@ export default class Editor extends Component {
     )
   }
 }
+
+Editor.propTypes = {
+  isVisible: PropTypes.bool.isRequired,
+  onInput: PropTypes.func.isRequired
+};
