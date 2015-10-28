@@ -11,7 +11,7 @@ export default class ToggleButton extends Component {
     return (
       <div>
         <label className={labelClass} htmlFor="switch-2" id="toggle-view">
-          <input onClick={this.props.onClick} type="checkbox" id="switch-2" className="mdl-switch__input"/>
+          <input onClick={this.props.toggleView} type="checkbox" id="switch-2" className="mdl-switch__input"/>
           <span className="mdl-switch__label"></span>
         </label>
 

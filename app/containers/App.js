@@ -7,7 +7,6 @@ import Document from './../components/Document';
 import ToggleButton from './../components/ToggleButton';
 import 'mousetrap';
 
-
 const { SHOW_EDITOR, SHOW_DOCUMENT } = VisibilityFilters;
 
 export class App extends Component {
@@ -19,7 +18,7 @@ export class App extends Component {
   toggleView() {
     const { dispatch, visibilityFilter } = this.props;
 
-    console.log('iranira', visibilityFilter);
+    console.log('hey');
 
     if (visibilityFilter === SHOW_DOCUMENT) {
       dispatch(setVisibilityFilter(SHOW_EDITOR))
@@ -43,7 +42,7 @@ export class App extends Component {
       <div ref="app">
         <ToggleButton
           filter={visibilityFilter}
-          onClick={this.toggleView} />
+          toggleView={this.toggleView} />
         <Editor
           isVisible={visibilityFilter === SHOW_EDITOR}
           onInput={text =>
