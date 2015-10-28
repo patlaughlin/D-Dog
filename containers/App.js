@@ -5,6 +5,8 @@ import { VisibilityFilters } from '../constants/ActionTypes';
 import Editor from './../components/Editor';
 import Document from './../components/Document';
 import ToggleButton from './../components/ToggleButton';
+import 'mousetrap';
+
 
 const { SHOW_EDITOR, SHOW_DOCUMENT } = VisibilityFilters;
 
@@ -14,39 +16,34 @@ export class App extends Component {
     this.toggleView = this.toggleView.bind(this);
   }
 
-  componentDidMount() {
-    window.addEventListener('keydown', this.toggleView);
-  }
-
-  toggleView(e) {
-    /** Listen for CMD+E **/
+  toggleView() {
     const { dispatch, visibilityFilter } = this.props;
-    let matchesCommandE = e.keyCode === 69 && e.metaKey;
 
-    console.log(visibilityFilter);
-    if (matchesCommandE) {
-      if (visibilityFilter === SHOW_DOCUMENT) {
-        dispatch(setVisibilityFilter(SHOW_EDITOR))
-      } else if (visibilityFilter === SHOW_EDITOR) {
-        dispatch(setVisibilityFilter(SHOW_DOCUMENT))
-      }
+    console.log('iranira', visibilityFilter);
+
+    if (visibilityFilter === SHOW_DOCUMENT) {
+      dispatch(setVisibilityFilter(SHOW_EDITOR))
+    } else if (visibilityFilter === SHOW_EDITOR) {
+      dispatch(setVisibilityFilter(SHOW_DOCUMENT))
     }
 
+  }
+
+  componentDidMount() {
+    let self = this;
+
+    Mousetrap.bind(['command+e', 'ctrl+e'], function() {
+      self.toggleView();
+    });
   }
 
   render() {
     const { dispatch, content, visibilityFilter } = this.props;
     return (
-      <div>
-        <HotKeys
-          onKeyDown={nextFilter =>
-            dispatch(setVisibilityFilter(nextFilter))
-          }/>
+      <div ref="app">
         <ToggleButton
           filter={visibilityFilter}
-          onFilterChange={nextFilter =>
-            dispatch(setVisibilityFilter(nextFilter))
-          }/>
+          onClick={this.toggleView} />
         <Editor
           isVisible={visibilityFilter === SHOW_EDITOR}
           onInput={text =>

@@ -2,6 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import marked from 'marked';
+import 'mousetrap';
 
 marked.setOptions({
   renderer: new marked.Renderer(),
@@ -22,6 +23,7 @@ export default class Editor extends Component {
 
   handleInput(e) {
     let rawMarkup = marked(e.target.value);
+    console.log(e);
     this.props.onInput({
       __html: rawMarkup
     });
@@ -33,7 +35,7 @@ export default class Editor extends Component {
       <div style={{display: isVisible ? "block" : "none"}}>
         <div className="editor">
           <div className="mdl-textfield mdl-js-textfield">
-            <textarea className="mdl-textfield__input" type="text" rows="10" onInput={this.handleInput}></textarea>
+            <textarea className="mdl-textfield__input mousetrap" type="text" rows="10" onInput={this.handleInput}></textarea>
             <label className="mdl-textfield__label">Markdown...</label>
           </div>
         </div>
