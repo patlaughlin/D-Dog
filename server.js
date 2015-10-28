@@ -10,7 +10,7 @@ new WebpackDevServer(webpack(config), {
   stats: {
     colors: true
   }
-}).listen(process.env === 'DEVELOPMENT' ? 3000 : 80, 'localhost', function (err) {
+}).listen(process.env.PORT || 5000, 'localhost', function (err) {
     if (err) {
       console.log(err);
     }
