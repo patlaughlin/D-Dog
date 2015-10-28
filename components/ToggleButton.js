@@ -1,35 +1,30 @@
 import React, { Component, PropTypes } from 'react';
+import classNames from 'classnames';
 
 export default class ToggleButton extends Component {
-  renderFilter(filter, name) {
-    if (filter === this.props.filter) {
-      return name;
-    }
-
-    return (
-      <a href='#' onClick={e => {
-        e.preventDefault();
-        this.props.onFilterChange(filter);
-      }}>
-        {name}
-      </a>
-    );
-  }
-
   render() {
+    let self       = this;
+    let labelClass = classNames({
+      'mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded': true,
+      'is-checked': self.props.filter === 'SHOW_DOCUMENT' ? 'is-checked' : ''
+    });
     return (
-      <p>
-        {this.renderFilter('SHOW_EDITOR', 'Show Editor')}
-        {', '}
-        {this.renderFilter('SHOW_DOCUMENT', 'Show Document')}
-        .
-      </p>
+      <div>
+        <label className={labelClass} htmlFor="switch-2" id="toggle-view">
+          <input onClick={this.props.onClick} type="checkbox" id="switch-2" className="mdl-switch__input"/>
+          <span className="mdl-switch__label"></span>
+        </label>
+
+        <div className="mdl-tooltip mdl-tooltip" htmlFor="toggle-view">
+          ⌘ + E
+        </div>
+      </div>
     );
   }
 }
 
 ToggleButton.propTypes = {
-  onFilterChange: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
   filter: PropTypes.oneOf([
     'SHOW_EDITOR',
     'SHOW_DOCUMENT'

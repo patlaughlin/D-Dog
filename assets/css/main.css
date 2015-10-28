@@ -14,6 +14,9 @@ body {
   max-width: 1128px;
   margin: 0 auto;
 }
+#toggle-view {
+  width: auto;
+}
 .editor {
   width: 8.5in;
   margin: 0 auto;
