@@ -18,20 +18,19 @@ export class App extends Component {
   toggleView() {
     const { dispatch, visibilityFilter } = this.props;
 
-    console.log('hey');
+    console.log('hi', visibilityFilter);
 
     if (visibilityFilter === SHOW_DOCUMENT) {
       dispatch(setVisibilityFilter(SHOW_EDITOR))
     } else if (visibilityFilter === SHOW_EDITOR) {
       dispatch(setVisibilityFilter(SHOW_DOCUMENT))
     }
-
   }
 
   componentDidMount() {
     let self = this;
 
-    Mousetrap.bind(['command+e', 'ctrl+e'], function() {
+    Mousetrap.bind(['command+e', 'ctrl+e'], function () {
       self.toggleView();
     });
   }
@@ -42,7 +41,7 @@ export class App extends Component {
       <div ref="app">
         <ToggleButton
           filter={visibilityFilter}
-          toggleView={this.toggleView} />
+          toggleView={this.toggleView}/>
         <Editor
           isVisible={visibilityFilter === SHOW_EDITOR}
           onInput={text =>

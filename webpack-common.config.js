@@ -16,6 +16,12 @@ module.exports = {
       exclude: /node_modules/,
       loaders: ['babel-loader?stage=0&optional=runtime']
     },
+    //eslint
+    {
+      test: /\.js$/,
+      loader: "eslint-loader",
+      exclude: /node_modules/
+    },
     // styles
     {
       test: /\.[s]?css$/,
@@ -37,6 +43,9 @@ module.exports = {
       test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file"
     }
   ],
+  eslint: {
+    configFile: './.eslintrc'
+  },
   // https://www.npmjs.com/package/html-webpack-plugin - generate our html file from a template - makes it easier to include custom stuff
   indexPagePlugin: new HtmlWebpackPlugin({
     inject: true,
