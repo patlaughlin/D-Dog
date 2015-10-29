@@ -4,7 +4,10 @@ import { Provider } from 'react-redux';
 import App from './containers/App';
 import dDog from './reducers';
 import { createStore } from 'redux';
-import './main.css';
+
+import './assets/css/material.min.css';
+import './assets/less/main.less';
+import './assets/js/material.min.js';
 
 const store = createStore(dDog);
 

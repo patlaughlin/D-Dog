@@ -19,12 +19,12 @@ module.exports = {
     // styles
     {
       test: /\.[s]?css$/,
-      loader: "style!css!autoprefixer-loader?browsers=last 2 version!sass"
+      loader: "style!css!autoprefixer-loader?browsers=last 2 version"
     },
     // less
     {
       test: /\.less$/,
-      loader: "style!css!less!./main.less"
+      loader: "style!css!less!"
     },
     // and font files - embed them if possible
     {
