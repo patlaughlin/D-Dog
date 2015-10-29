@@ -11,7 +11,7 @@ var devLoaders = [
 
 module.exports = {
   entry: [
-    // setup the hot mobule loading
+    // setup the hot module loading
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
     // our entry file

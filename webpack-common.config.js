@@ -21,6 +21,11 @@ module.exports = {
       test: /\.[s]?css$/,
       loader: "style!css!autoprefixer-loader?browsers=last 2 version!sass"
     },
+    // less
+    {
+      test: /\.less$/,
+      loader: "style!css!less!./main.less"
+    },
     // and font files - embed them if possible
     {
       test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&minetype=application/font-woff"

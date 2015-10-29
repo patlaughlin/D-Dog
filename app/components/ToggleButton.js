@@ -10,8 +10,8 @@ export default class ToggleButton extends Component {
     });
     return (
       <div>
-        <label className={labelClass} htmlFor="switch-2" id="toggle-view">
-          <input onClick={this.props.toggleView} type="checkbox" id="switch-2" className="mdl-switch__input"/>
+        <label onClick={this.props.toggleView} className={labelClass} htmlFor="switch-2" id="toggle-view">
+          <input type="checkbox" id="switch-2" className="mdl-switch__input"/>
           <span className="mdl-switch__label"></span>
         </label>
 
@@ -24,7 +24,7 @@ export default class ToggleButton extends Component {
 }
 
 ToggleButton.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  toggleView: PropTypes.func.isRequired,
   filter: PropTypes.oneOf([
     'SHOW_EDITOR',
     'SHOW_DOCUMENT'
