@@ -1,9 +1,10 @@
 import React, { Component, PropTypes } from 'react';
+import ReactTooltip from 'react-tooltip';
 import classNames from 'classnames';
 
 export default class ToggleButton extends Component {
   render() {
-    let self = this;
+    let self      = this;
     let isChecked = self.props.filter === 'SHOW_DOCUMENT' ? 'is-checked' : '';
 
     let labelClass = classNames({
@@ -11,13 +12,11 @@ export default class ToggleButton extends Component {
     });
 
     return (
-      <div className="visible-sm-block visible-xs-block">
-        <input onClick={this.props.toggleView} id="toggle-btn" checked={isChecked} type="checkbox" className={labelClass}/>
-        <label htmlFor="toggle-btn" className="tgl-btn"></label>
-
-        <div className="mdl-tooltip mdl-tooltip" htmlFor="toggle-view">
-          ⌘ + E
-        </div>
+      <div className="toggle-btn visible-sm-block visible-xs-block">
+        <ReactTooltip place="top" type="dark" effect="float"/>
+        <input onClick={this.props.toggleView} id="toggle-btn" checked={isChecked} type="checkbox"
+               className={labelClass}/>
+        <label data-tip="⌘ + E" htmlFor="toggle-btn" className="tgl-btn"></label>
       </div>
     );
   }

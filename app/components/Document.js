@@ -8,7 +8,7 @@ export default class Document extends Component {
     let documentClasses = classNames({
       'document': true,
       'visible': this.props.isVisible,
-      'hidden-sm hidden-xs hidden-md': !this.props.isVisible
+      'hidden-sm hidden-xs': !this.props.isVisible
     });
     return (
       <div className={documentClasses}>

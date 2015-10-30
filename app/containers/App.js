@@ -40,10 +40,14 @@ export class App extends Component {
     return (
       <div>
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-sm-12">
             <ToggleButton
               filter={visibilityFilter}
               toggleView={this.toggleView}/>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-6">
             <Editor
               isVisible={visibilityFilter === SHOW_EDITOR}
               onInput={text =>
