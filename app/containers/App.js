@@ -38,18 +38,24 @@ export class App extends Component {
   render() {
     const { dispatch, content, visibilityFilter } = this.props;
     return (
-      <div ref="app">
-        <ToggleButton
-          filter={visibilityFilter}
-          toggleView={this.toggleView}/>
-        <Editor
-          isVisible={visibilityFilter === SHOW_EDITOR}
-          onInput={text =>
+      <div>
+        <div className="row">
+          <div className="col-sm-12">
+            <ToggleButton
+              filter={visibilityFilter}
+              toggleView={this.toggleView}/>
+            <Editor
+              isVisible={visibilityFilter === SHOW_EDITOR}
+              onInput={text =>
             dispatch(setContent(text))
           }/>
-        <Document
-          isVisible={visibilityFilter === SHOW_DOCUMENT}
-          text={content}/>
+          </div>
+          <div className="col-sm-12">
+            <Document
+              isVisible={visibilityFilter === SHOW_DOCUMENT}
+              text={content}/>
+          </div>
+        </div>
       </div>
     );
   }

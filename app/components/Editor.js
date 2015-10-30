@@ -34,10 +34,8 @@ export default class Editor extends Component {
     return (
       <div style={{display: isVisible ? "block" : "none"}}>
         <div className="editor">
-          <div className="mdl-textfield mdl-js-textfield">
-            <textarea className="mdl-textfield__input mousetrap" type="text" rows="10" onInput={this.handleInput}></textarea>
-            <label className="mdl-textfield__label">Markdown...</label>
-          </div>
+          <textarea className="form-control mousetrap" type="text" rows="10"
+                    onInput={this.handleInput} placeholder="Markdown..."></textarea>
         </div>
       </div>
     )

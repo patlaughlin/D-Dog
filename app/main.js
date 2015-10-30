@@ -1,6 +1,4 @@
-import './assets/css/material.min.css';
 import './assets/less/main.less';
-import './assets/js/material.min.js';
 
 import React from 'react';
 import { render } from 'react-dom';
@@ -13,7 +11,9 @@ const store = createStore(dDog);
 
 render(
   <Provider store={store}>
-    <App />
+    <div className="container">
+      <App />
+    </div>
   </Provider>,
   document.getElementById('root')
 );
