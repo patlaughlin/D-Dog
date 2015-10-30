@@ -40,7 +40,7 @@ export class App extends Component {
     return (
       <div>
         <div className="row">
-          <div className="col-sm-12">
+          <div className="col-md-6">
             <ToggleButton
               filter={visibilityFilter}
               toggleView={this.toggleView}/>
@@ -50,7 +50,7 @@ export class App extends Component {
             dispatch(setContent(text))
           }/>
           </div>
-          <div className="col-sm-12">
+          <div className="col-md-6">
             <Document
               isVisible={visibilityFilter === SHOW_DOCUMENT}
               text={content}/>

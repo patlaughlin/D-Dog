@@ -3,19 +3,17 @@ import classNames from 'classnames';
 
 export default class ToggleButton extends Component {
   render() {
-    let self       = this;
+    let self = this;
+    let isChecked = self.props.filter === 'SHOW_DOCUMENT' ? 'is-checked' : '';
+
     let labelClass = classNames({
-      'is-checked': self.props.filter === 'SHOW_DOCUMENT' ? 'is-checked' : ''
+      'tgl tgl-flat': true
     });
 
     return (
       <div className="visible-sm-block visible-xs-block">
-        <div onClick={this.props.toggleView}>
-          <label className={labelClass} htmlFor="switch-2" id="toggle-view">
-            <input type="checkbox" id="switch-2" className="mdl-switch__input"/>
-            <span className="mdl-switch__label"></span>
-          </label>
-        </div>
+        <input onClick={this.props.toggleView} id="toggle-btn" checked={isChecked} type="checkbox" className={labelClass}/>
+        <label htmlFor="toggle-btn" className="tgl-btn"></label>
 
         <div className="mdl-tooltip mdl-tooltip" htmlFor="toggle-view">
           ⌘ + E

@@ -22,6 +22,9 @@ export default class Editor extends Component {
     this.handleInput = this.handleInput.bind(this);
   }
 
+  componentDidMount() {
+  }
+
   handleInput(e) {
     let rawMarkup = marked(e.target.value);
     console.log(e);
@@ -33,14 +36,12 @@ export default class Editor extends Component {
   render() {
     let editorClasses = classNames({
       'visible': this.props.isVisible,
-      'hidden-sm hidden-xs': !this.props.isVisible
+      'hidden-sm hidden-xs hidden-md': !this.props.isVisible
     });
     return (
       <div className={editorClasses}>
-        <div className="editor">
-          <textarea className="form-control mousetrap" type="text" rows="10"
+          <textarea className="editor mousetrap" type="text" rows="10"
                     onInput={this.handleInput} placeholder="Markdown..."></textarea>
-        </div>
       </div>
     )
   }

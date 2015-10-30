@@ -11,7 +11,7 @@ const store = createStore(dDog);
 
 render(
   <Provider store={store}>
-    <div className="container">
+    <div className="container-fluid">
       <App />
     </div>
   </Provider>,
