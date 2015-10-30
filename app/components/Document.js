@@ -1,12 +1,17 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
+import classNames from 'classnames';
 
 export default class Document extends Component {
   render() {
-    let isVisible = this.props.isVisible;
+    let documentClasses = classNames({
+      'document': true,
+      'visible': this.props.isVisible,
+      'hidden-sm hidden-xs': !this.props.isVisible
+    });
     return (
-      <div style={{display: isVisible ? "block" : "none"}}>
+      <div className={documentClasses}>
         <article className="stage-document" dangerouslySetInnerHTML={this.props.text}/>
       </div>
     )

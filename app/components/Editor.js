@@ -2,6 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import marked from 'marked';
+import classNames from 'classnames';
 import 'mousetrap';
 
 marked.setOptions({
@@ -30,9 +31,12 @@ export default class Editor extends Component {
   }
 
   render() {
-    let isVisible = this.props.isVisible;
+    let editorClasses = classNames({
+      'visible': this.props.isVisible,
+      'hidden-sm hidden-xs': !this.props.isVisible
+    });
     return (
-      <div style={{display: isVisible ? "block" : "none"}}>
+      <div className={editorClasses}>
         <div className="editor">
           <textarea className="form-control mousetrap" type="text" rows="10"
                     onInput={this.handleInput} placeholder="Markdown..."></textarea>

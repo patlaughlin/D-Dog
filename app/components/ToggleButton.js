@@ -5,12 +5,11 @@ export default class ToggleButton extends Component {
   render() {
     let self       = this;
     let labelClass = classNames({
-      'mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect is-upgraded': true,
       'is-checked': self.props.filter === 'SHOW_DOCUMENT' ? 'is-checked' : ''
     });
 
     return (
-      <div>
+      <div className="visible-sm-block visible-xs-block">
         <div onClick={this.props.toggleView}>
           <label className={labelClass} htmlFor="switch-2" id="toggle-view">
             <input type="checkbox" id="switch-2" className="mdl-switch__input"/>
