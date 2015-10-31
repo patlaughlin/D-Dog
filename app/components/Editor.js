@@ -30,29 +30,15 @@ export default class Editor extends Component {
     });
   }
 
-  componentDidMount() {
-    this._textarea.focus();
-  }
-
   render() {
     let editorClasses = classNames({
       'visible': this.props.isVisible,
       'hidden-sm hidden-xs hidden-md': !this.props.isVisible
     });
 
-    if (typeof this._textarea !== typeof undefined) {
-      if (this.props.isVisible) {
-        this._textarea.focus();
-        console.log('focus()');
-      } else {
-        console.log('blur');
-        this._textarea.blur();
-      }
-    }
-
     return (
       <div className={editorClasses}>
-          <textarea ref={(c) => this._textarea = c} className="editor mousetrap" type="text" rows="10"
+          <textarea ref={(el) => el && el.focus()} className="editor mousetrap" type="text" rows="10"
                     onInput={this.handleInput} placeholder="Markdown..."></textarea>
       </div>
     )
