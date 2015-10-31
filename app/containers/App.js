@@ -18,8 +18,6 @@ export class App extends Component {
   toggleView() {
     const { dispatch, visibilityFilter } = this.props;
 
-    console.log('hi', visibilityFilter);
-
     if (visibilityFilter === SHOW_DOCUMENT) {
       dispatch(setVisibilityFilter(SHOW_EDITOR))
     } else if (visibilityFilter === SHOW_EDITOR) {
@@ -42,6 +40,7 @@ export class App extends Component {
         <div className="row">
           <div className="col-sm-12">
             <ToggleButton
+              ref="editor"
               filter={visibilityFilter}
               toggleView={this.toggleView}/>
           </div>
